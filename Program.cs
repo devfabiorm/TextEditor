@@ -38,9 +38,9 @@
         {
             text += Console.ReadLine();
             text += Environment.NewLine;
-        } while (Console.ReadKey().Key != ConsoleKey.Escape);
+        } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
-        Console.Write(text);
+        Salvar(text);
     }
 
     static void Salvar(string text)
@@ -54,6 +54,8 @@
             file.Write(text);
         }
 
-        Console.WriteLine("Arquivo Salvo com sucesso!");
+        Console.WriteLine($"Arquivo {path} Salvo com sucesso!");
+        Console.ReadKey(true);
+        Menu();
     }
 }
